@@ -55,7 +55,7 @@ public class Board {
         return mrBooleanWillPayYouAVisitIfYouAreNotCareful;
     }
 
-    public boolean foundShip(int len) {
+   public boolean foundShip(int len) {
         boolean moreBooleansHolyMoly = false;
         int counter = 0;
         int totalCounter = 0;
@@ -65,6 +65,10 @@ public class Board {
             for (int c = 0; c < squares[0].length; c++) {
                 if (squares[r][c].equals("b")) {
                     counter++;
+                } else if (counter == len) {
+                    moreBooleansHolyMoly = true;
+                } else {
+                    counter = 0;
                 }
             }
             if (counter == len) {
@@ -77,6 +81,10 @@ public class Board {
             for (int r = 0; r < squares.length; r++) {
                 if (squares[r][c].equals("b")) {
                     counter++;
+                } else if (counter == len) {
+                    moreBooleansHolyMoly = true;
+                } else {
+                    counter = 0;
                 }
             }
             if (counter == len) {
